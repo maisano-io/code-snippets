@@ -1,0 +1,3 @@
+One-liner to deploy RMM from CMD while calling PowerShell. Make sure to edit the token and URLs.
+
+powershell -Command "if (Test-Path -Path 'C:\Program Files (x86)\ITSPlatform' -PathType Container) { Write-Host 'RMM is already installed.' } else { Invoke-WebRequest -Uri 'https://prod.setup.itsupport247.net/windows/BareboneAgent/32/Geraldton%20(Geraldton%20Toyota)_Windows_OS_ITSPlatform_TKN2e2ec3dc-7b89-40c3-b891-2f0224c411e8/MSI/setup' -OutFile 'Geraldton (Geraldton Toyota)_Windows_OS_ITSPlatform_TKN2e2ec3dc-7b89-40c3-b891-2f0224c411e8.msi'; msiexec.exe /i 'Geraldton (Geraldton Toyota)_Windows_OS_ITSPlatform_TKN2e2ec3dc-7b89-40c3-b891-2f0224c411e8.msi' /quiet; Write-Host 'RMM has now been installed.' }"
